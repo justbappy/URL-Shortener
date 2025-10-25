@@ -25,3 +25,28 @@ body::-webkit-scrollbar{
   flex: inherit;
   /* border: 2px solid red; */
 }
+
+.link::after{
+  content: '';
+  background-color: black;
+  height: 2.5px;
+  display: flex;
+  flex-direction: column;
+  width: 0%;
+  transition: all;
+  transition-duration: 300ms;
+}
+.link:hover::after{
+  width: 100%;
+  transition: all;
+  transition-duration: 300ms;
+}
+
+.active::after{
+  content: '';
+  background-color: black;
+  height: 2.5px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}

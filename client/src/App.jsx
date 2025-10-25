@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider, useNavigation } from "react-router-dom"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import "./App.css"
 import AppLayout from "./components/layout/AppLayout";
 import ErrorPage from "./pages/ErrorPage";
@@ -52,4 +52,4 @@ const App = () => {
   return <RouterProvider router={router}/>
 }
 
-export default App
+export default App;

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 // navbar links
 export const NavLinks = ({
@@ -8,21 +8,27 @@ export const NavLinks = ({
     return (
     <>
         <li
-        className="text-[18px] font-[500] cursor-pointer"
+        className="text-[18px] font-[500] cursor-pointer flex after:h-[5px]"
         >
             {
                 !localStorage.getItem("user") && (link=="Login" || link=="Register")?
-                <Link to={`/${link.toLowerCase()}`}
+                <NavLink
+                to={`/${link.toLowerCase()}`}
+                className="link"
                 onClick={() => setMobileNav(false)}
-                >{link}</Link>
+                >{link}</NavLink>
                 :localStorage.getItem("user") && link=="Logout" ?
-                <Link to={`/${link.toLowerCase()}`}
+                <NavLink 
+                to={`/${link.toLowerCase()}`} 
+                className="link"
                 onClick={() => setMobileNav(false)}
-                >{link}</Link>
+                >{link}</NavLink>
                 : link=="Home" || link=="About" || link=="Contact" ?
-                <Link to={`${link.toLowerCase()}`}
-                onClick={() => setMobileNav(false)}
-                >{link}</Link>
+                <NavLink 
+                to={`/${link.toLowerCase()}`}
+                onClick={() => setMobileNav(false)} 
+                className="link"
+                >{link}</NavLink>
                 :""
             }
         </li>
