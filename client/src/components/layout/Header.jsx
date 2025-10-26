@@ -2,10 +2,10 @@ import { NavLinks } from "../UI/NavLinks";
 import { IoMenu } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 // Header
-export const Header = () => {
+const Header = () => {
 
     const [mobileNav, setMobileNav] = useState(false);
 
@@ -69,6 +69,18 @@ export const Header = () => {
             mobileNav?"left-0":"left-[-300px]"
         } h-dvh w-[250px] transition-all duration-300`}
         >
+            {/* profile avatar */}
+            <div
+            className="w-[50px] h-[50px] absolute top-5"
+            >
+                <Link to="/profile" onClick={()=>setMobileNav(false)}>
+                    <img 
+                    src="images/profile-2.jpg" 
+                    alt="user profile" 
+                    className="rounded-[50%]"
+                    />
+                </Link>
+            </div>
             <IoMdClose
             className="text-white absolute top-5 right-5 text-2xl"
             onClick={()=>setMobileNav(false)}

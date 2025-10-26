@@ -25,11 +25,11 @@ export const NavLinks = ({
                 >{link}</NavLink>
                 : link=="Home" || link=="About" || link=="Contact" ?
                 <NavLink 
-                to={`/${link.toLowerCase()}`}
+                to={`/${link.toLowerCase()=="home"?"":link.toLowerCase()}`}
                 onClick={() => setMobileNav(false)} 
                 className="link"
                 >{link}</NavLink>
-                :""
+                :null
             }
         </li>
     </>
